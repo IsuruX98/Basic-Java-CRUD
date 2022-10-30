@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>my acc</title>
 </head>
 <body>
 <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
