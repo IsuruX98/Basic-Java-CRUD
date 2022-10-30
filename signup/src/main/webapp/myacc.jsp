@@ -9,6 +9,9 @@
 <title>my acc</title>
 </head>
 <body>
+
+<h1>user page</h1>
+
 <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<table>
 	<!-- looping the user data using c tag library -->
