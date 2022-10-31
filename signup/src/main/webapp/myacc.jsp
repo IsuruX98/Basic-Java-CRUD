@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>my acc</title>
+<title>my account</title>
 </head>
 <body>
 
@@ -15,6 +15,7 @@
 <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
 	<table>
 	<!-- looping the user data using c tag library -->
+	
 	<c:forEach var="user" items="${userDetails}">
 	
 	<!-- storing the user data into variables -->
