@@ -44,8 +44,10 @@ public class LoginServletNew extends HttpServlet {
 		
 		//creating a object from util class to access the method
 		UsersDBUtil o = new UsersDBUtil();
+		
 		//passing the return value of the method
         isTrue = o.validateuser(uemail, upwd);
+        
         //storing user data
       	List<User> userDetails = o.getUserDetails(uemail, upwd);
 		
