@@ -12,6 +12,7 @@ public class UsersDBUtil {
 	
 	//to store the boolean value to return
 	private static boolean isSuccess = false;
+	static boolean userCheck = false;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -32,8 +33,19 @@ public class UsersDBUtil {
 			rs = pst.executeQuery();
 			
 			if(rs.next()) {
-				isSuccess = true;
-				
+				String type = rs.getString(6);
+
+				if (type.equals("admin")) {
+					userCheck = true;
+				}else {
+					userCheck = false;
+				}
+				if (type.equals("user")) {
+					isSuccess = true;
+				}else {
+					isSuccess = false;
+					
+				}	
 			}else {
 				isSuccess = false;
 			}

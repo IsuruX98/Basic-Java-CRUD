@@ -50,8 +50,17 @@ public class LoginServletNew extends HttpServlet {
         
         //storing user data
       	List<User> userDetails = o.getUserDetails(uemail, upwd);
+      	
+		if (UsersDBUtil.userCheck == true) {
+			
+			//creating the session
+			session.setAttribute("name", uemail);
+			request.setAttribute("userDetails", userDetails);
+			request.setAttribute("status", "pass");
+			//redirect to another page
+			dispatcher = request.getRequestDispatcher("admin.jsp");
 		
-      	if (isTrue == true) {
+		}else if (isTrue == true) {
 			
 			//creating the session
 			session.setAttribute("name", uemail);
@@ -59,6 +68,7 @@ public class LoginServletNew extends HttpServlet {
 			request.setAttribute("status", "pass");
 			//redirect to another page
 			dispatcher = request.getRequestDispatcher("myacc.jsp");
+		
 		}else {
 			request.setAttribute("status", "failed");
 			dispatcher = request.getRequestDispatcher("login.jsp");
